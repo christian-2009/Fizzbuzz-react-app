@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { isFizz } from "./logic";
+import { isBuzz } from "./logic";
 
 export default function FizzBuzz(): JSX.Element {
   const [currentNumber, queueNumber] = useState(1);
@@ -10,11 +12,11 @@ export default function FizzBuzz(): JSX.Element {
   };
 
   const handleValue = () => {
-    if (currentNumber % 3 === 0 && currentNumber % 5 === 0) {
+    if (isFizz(currentNumber) && isBuzz(currentNumber)) {
       queueArray([...currentArray, "FizzBuzz, "]);
-    } else if (currentNumber % 3 === 0) {
+    } else if (isFizz(currentNumber)) {
       queueArray([...currentArray, "Fizz, "]);
-    } else if (currentNumber % 5 === 0) {
+    } else if (isBuzz(currentNumber)) {
       queueArray([...currentArray, "Buzz, "]);
     } else {
       queueArray([...currentArray, currentNumber + ", "]);
