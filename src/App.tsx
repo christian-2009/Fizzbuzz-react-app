@@ -1,12 +1,11 @@
-
 import FizzBuzz from "./utils/fizzbuzz";
 
 function App(): JSX.Element {
   return (
-  <>
-    <FizzBuzz />
-  </>
-  )
+    <>
+      <FizzBuzz />
+    </>
+  );
 }
 
 export default App;
